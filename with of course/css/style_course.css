@@ -50,7 +50,7 @@ a{
   border: 0;
 }
 
-.button:hover, .button:focus, .button:active{
+.button:hover, .button:focus {
   background-color: #663d15;
 }
 
@@ -269,6 +269,7 @@ padding: 0;
 .galery_container{
   height: 260px;
   position: relative;
+  
 }
 
 .gallery_button{
@@ -289,10 +290,51 @@ padding: 0;
 
 .galerry_content{
   background-color: #ccc;
-  border: 7px solid #fff;
+  background-image: url(../img/studio.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 286px;
   height: 178px;
+  border: 7px solid #fff;
   margin: 0;
+  display: flex;
+  position: relative;
 }
+
+/* Slider */
+.slider{
+  position: absolute;
+  left: -1px;
+  top: 0;
+  max-width: 274px;
+  display: none;
+}
+
+.slider_1_active{
+  display: block;
+  animation-name: slider;
+  animation-duration: .5s;
+}
+.slider_2_active{
+  display: block;
+  animation-name: slider;
+  animation-duration: .5s;
+}
+.slider_3_active{
+  display: block;
+  animation-name: slider;
+  animation-duration: .5s;
+}
+.slider_4_active{
+  display: block;
+  animation-name: slider;
+  animation-duration: .5s;
+}
+
+
+
+
+/*Contacts*/
 
 .contacts{
   max-width: 380px;
@@ -469,7 +511,7 @@ padding: 0;
   position: fixed;
   margin: auto;
   top: 0; right: 0; bottom: 0; left: 0;
-  display: none;
+  
 }
 
 .modal--login{
@@ -477,8 +519,13 @@ padding: 0;
   height: 385px;
   padding: 50px 80px 60px;
   box-shadow: 0 10px 20px 10px rgba(0, 0, 0, .8);
+  display: none;
+}
 
+.login-active{
+  display: block;
 
+  
 }
 
 
@@ -488,6 +535,22 @@ padding: 0;
   height: 40px;
   border: 2px solid #000;
   padding: 8px 15px 7px;
+  text-transform: uppercase;
+  font-family: "PT Sans Narrow", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.input_error{
+  box-shadow: 0 0 10px #da0505;
+}
+.login_icon:focus.input_error{
+  box-shadow: 0 0 10px #da0505;
+}
+
+
+.login_icon:focus{
+  box-shadow: 0 0 5px #212121;
 }
 
 .login_icon.user{
@@ -617,9 +680,18 @@ transform: rotate(-45deg);
   background: none;
 }
 
-.modal--map p{
+.map_active{ 
+  display: block;
+}
 
+.modal--map p{
+  width: 100%;
+  width: 794px;
+  height: 574px;
   margin: 0;
+  border: 8px solid #fff;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, .8);
+  z-index: 10;
 }
 
 .modal--map .close{
@@ -628,8 +700,39 @@ transform: rotate(-45deg);
 }
 .map_img{
   width: 100%;
-  max-width: 780px;
-  height: auto;
-  border: 8px solid #fff;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, .8);
+  width: 780px;
+  height: 560px;
+  
+  
+  z-index: 1;
+}
+
+
+/* Тряска формы */
+
+@keyframes shake {
+  0%, 100%                {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80%      {transform: translateX(10px);}
+}
+
+.modal-error {
+  animation-name: shake;
+  animation-duration: .5s;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(-2000px);}
+  70% { transform: translateY(30px);}
+  90% { transform: translateY(-10px);}
+  100% { transform: translateY(0);}
+
+}
+
+
+@keyframes slider {
+  0% { opacity: 0;  transform: translateX(-100px);}
+  
+  100% {opacity: 1; transform: translateX(0);}
+
 }

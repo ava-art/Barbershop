@@ -27,7 +27,7 @@
                 </ul>
                 <ul class="user_navigation">
                   <li>
-                    <a class="login_link" href="login.html">Войти</a>
+                    <a class="login_link" href="#">Войти</a>
                   </li>
                 </ul>
             </div>
@@ -85,11 +85,14 @@
           <div class="galery_container">
 
             <figure class="galerry_content">
-              <a href="#">
-                <img src="img/studio.jpg" width="286px"  alt="Интерьер">
-              </a>
+              
+                <img class="slider slider_1" src="img/slider/1.jpg" width="286px" height="100%" alt="Интерьер">
+                <img class="slider slider_2" src="img/slider/2.jpg" width="286px" height="100%"  alt="Интерьер">
+                <img class="slider slider_3" src="img/slider/3.jpg" width="286px" height="100%" alt="Интерьер">
+                <img class="slider slider_4" src="img/slider/4.jpg" width="286px" height="100%" alt="Интерьер">
+              
             </figure>
-            <button class="button gallery_button gallery_button_back" type="button" disabled>Назад</button>
+            <button class="button gallery_button gallery_button_back" type="button" >Назад</button>
             <button class="button gallery_button gallery_button_next" type="button" >Вперёд</button>
           </div>
           </section>
@@ -106,21 +109,21 @@
                 ПН—ПТ: С 10:00 ДО 22:00<br>
                 СБ—ВС: С 10:00 ДО 19:00</p>
 
-                <a class="button" href="map.html">как проехать</a>
+                <a class="button" href="#" id="map1">как проехать</a>
                 <a class="button" href="contact.html">обратная связь</a>
           </section>
 
           <section class="appoiment">
             <h2>Записаться</h2>
             <p>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</p>
-            <form class="appoiment_form" action="index.html" method="post">
+            <form class="appoiment_form" action="https://echo.htmlacademy.ru" method="post">
               <p class="appoiment_item" >
                 <label for="date">Дата</label>
-                <input type="text" id="date" name="date" value="2022-28-03">
+                <input type="text" id="date" name="date" placeholder="2022-28-03">
               </p>
               <p class="appoiment_item">
                 <label for="time">Время</label>
-                <input type="text" id="time" name="time" value="17:00">
+                <input type="text" id="time" name="time" placeholder="17:00">
               </p>
               <p class="appoiment_item">
                 <label for="name">Ваше имя</label>
@@ -130,7 +133,7 @@
                 <label for="phone">Телефон</label>
                 <input type="phone" id="tel" name="phone" placeholder="+7 938 42-35-698">
               </p>
-              <button class="button" type="submit" name="button">Отправить</button>
+              <button class="button" type="submit">Отправить</button>
             </form>
           </section>
         </div>
@@ -142,7 +145,7 @@
 
           <p class="footer_contacts">БАРБЕРШОП «БОРОДИНСКИЙ» <br>
             АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8<br>
-            <a href="#">КАК НАС НАЙТИ?</a><br>
+            <a href="#" id="map2">КАК НАС НАЙТИ?</a><br>
             ТЕЛЕФОН: +7 (495) 666-02-66</p>
 
             <div class="footer_social">
@@ -169,36 +172,37 @@
       <section class="modal modal--login">
         <h2>Личный кабинет</h2>
         <p>Введите пожалуйста свой логин и пароль</p>
-        <form class="login_form" action="index.html" method="post">
+        <form novalidate class="login_form" action="https://echo.htmlacademy.ru" method="post">
           <p>
             <label class="visually_hiden" for="login">Логин:</label>
-            <input class="login_icon user" id="login" type="email" name="login" placeholder="Koshkadav@gmail.com">
+            <input class="login_icon user" id="login" type="email" name="login" placeholder="Koshkadav@gmail.com" required>
           </p>
           <p>
-            <label class="visually_hiden" for="password">Пароль:</label>
-            <input class="login_icon password" id="password" type="password" name="password"placeholder="********">
+            <label class="visually_hiden" value="" for="password">Пароль:</label>
+            <input class="login_icon password" id="password" type="password" name="password"placeholder="********" required>
           </p>
           <p class="restore_flex">
             <label class="login-checkbox">
-          <input type="checkbox" name="remember" class="visually_hiden"  >
+          <input type="checkbox" name="remember" value="" class="visually_hiden"  >
            <span class="checkbox-indicator"></span>Запомнить меня</label>
           <a class="restore" href="#">Я забыл пароль!</a>
           </p>
-          <button class="button" type="submit" name="button">Войти</button>
+          <button class="button" type="submit">Войти</button>
         </form>
-        <div class="close">
+        <div class="close" id="close-login">
         </div>
       </section>
 
       <section class="modal modal--map">
         <h2 class="visually_hiden">Как до нас добраться</h2>
         <p>
-          <img class="map_img" src="img/map.jpg" width="780" height="560" alt="карта как к нам добраться">
+          <iframe class="map_img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5416.6009668850675!2d39.76509715780646!3d47.249827259531244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b9de80320f89%3A0x4a742335c7a3dfb!2sDK%20%22Rostsel&#39;mash%22!5e0!3m2!1sen!2sru!4v1649233212215!5m2!1sen!2sru" width="780" height="560" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </p>
 
-        <div class="close">
+        <div class="close" id="close-map">
         </div>
       </section>
-
+        <script src="./js/js_index.js"></script>
+        <script src="./js/slider.js"></script>
   </body>
 </html>
